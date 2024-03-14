@@ -3,6 +3,7 @@ import errorHandler from "./middleware/errorHandler.js";
 import tryCatch from "./utils/tryCatch.js";
 import Joi from "joi";
 import AppError from "./utils/AppError.js";
+import  {SUBSCRIPTION_NOT_VALID}  from "./constants/constantErrorCode.js";
 const PORT = process.env.PORT || 3000;
 const app = express();
 const userDetails = () => undefined;
@@ -31,9 +32,13 @@ app.post(
     // const { error, value } = schema.validate({});
     // if (error) throw error;
     const subscription = getSucription();
-    if (!subscription) throw new AppError(300, "subscription not found", 400);
+    if (!subscription)
+      throw new AppError(
+        SUBSCRIPTION_NOT_VALID,
+        "subscription not found",
+        400
+      );
     res.status(200).send({ message: `Wellcome back 🤘 ${user}` });
-
   })
 );
 
