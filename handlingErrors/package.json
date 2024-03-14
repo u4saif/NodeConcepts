@@ -1,0 +1,19 @@
+{
+  "name": "handlingerrors",
+  "version": "1.0.0",
+  "description": "This will explain how to make your project error handling in a smooth manner",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start":"node index.js",
+    "dev":"nodemon run index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shaikh Saifuddin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3",
+    "joi": "^17.12.2",
+    "nodemon": "^3.1.0"
+  }
+}
