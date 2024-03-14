@@ -2,13 +2,14 @@ import express from "express";
 import errorHandler from "./middleware/errorHandler.js";
 import tryCatch from "./utils/tryCatch.js";
 import Joi from "joi";
-
+import AppError from "./utils/AppError.js";
 const PORT = process.env.PORT || 3000;
 const app = express();
 const userDetails = () => undefined;
+const getSucription = () => undefined;
 const schema = Joi.object({
-  userId:Joi.number().required()
-})
+  userId: Joi.number().required(),
+});
 
 app.get(
   "/login",
@@ -25,15 +26,14 @@ app.get(
 
 app.post(
   "/login",
-  tryCatch(async (req, res, next) => {
+  tryCatch(async (req, res) => {
     const user = await userDetails();
-    const { error, value} = schema.validate({});
-    if(error){
-      throw error;
-    }
+    // const { error, value } = schema.validate({});
+    // if (error) throw error;
+    const subscription = getSucription();
+    if (!subscription) throw new AppError(300, "subscription not found", 400);
     res.status(200).send({ message: `Wellcome back 🤘 ${user}` });
 
-    next(error);
   })
 );
 
