@@ -1,0 +1,3 @@
+export const SUBSCRIPTION_NOT_VALID = 304;
+export const USER_NOT_VALID = 301;
+export const SERVER_TOOKLONG_TO_PROCESS = 502;
