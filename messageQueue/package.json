@@ -1,0 +1,11 @@
+{
+  "name": "messagequeue",
+  "version": "1.0.0",
+  "description": "This is a sample for MQueue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shaikh Saifuddin",
+  "license": "ISC"
+}
