@@ -1,0 +1,22 @@
+{
+  "name": "messagequeue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start":"node index.js",
+    "dev":"nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shaikh Saifuddin",
+  "license": "ISC",
+  "dependencies": {
+    "bull": "^4.12.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
